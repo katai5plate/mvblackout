@@ -24,6 +24,7 @@ let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototyp
   Input.isPressed('control') && console.log(...__debug(ctx));
 }
 $gameSystem._menuEnabled = false;
+Scene_Map.prototype.processMapTouch = () => {};
 ```
 
 4. Play. example:
@@ -43,6 +44,7 @@ console.log({__reference});
 # default preference
 ## game
 - menuEnabled: false
+- processMapTouch: disable
 ## context
 - textBaseline: top
 - strokeStyle: white
