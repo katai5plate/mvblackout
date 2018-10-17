@@ -12,9 +12,7 @@ https://katai5plate.github.io/mvblackout/
 var __draw = () => {}; // Coding the drawing process here
 var __debug = ctx => ["hi"]; // Coding the process to send log when pressing control/alt key here (for debugging)
 
-let __mm = TouchInput._onMouseMove; TouchInput._onMouseMove = function(event) {
-  __mm.apply(this, arguments), this._onMove(Graphics.pageToCanvasX(event.pageX), Graphics.pageToCanvasY(event.pageY));
-}; const [__mx, __my, __sw, __sh] = [TouchInput.x, TouchInput.y, SceneManager._screenWidth, SceneManager._screenHeight];
+const [__sw, __sh] = [SceneManager._screenWidth, SceneManager._screenHeight];
 let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototype.update = function () {
   __u.apply(this); const ly = 'mvblackout', sm = SceneManager; if (!sm._scene[ly]) {
     sm._scene[ly] = new Sprite(), sm._scene[ly].bitmap = new Bitmap(__sw, __sh);
@@ -36,7 +34,7 @@ __draw = ctx => {
   ctx.lineTo(90, 90);
   ctx.stroke();
 }
-__debug = () => [__mx, __my];
+__debug = () => [TouchInput.x, TouchInput.y];
 ```
 ```js
 console.log({__reference});
