@@ -25,6 +25,7 @@ let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototyp
 }
 $gameSystem._menuEnabled = false;
 Scene_Map.prototype.processMapTouch = () => {};
+document.body.style.backgroundColor = "gray";
 ```
 
 4. Play. example:
@@ -45,6 +46,7 @@ console.log({__reference});
 ## game
 - menuEnabled: false
 - processMapTouch: disable
+- documentBodyColor: gray
 ## context
 - textBaseline: top
 - strokeStyle: white
