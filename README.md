@@ -1,6 +1,13 @@
 # mvblackout
-blank project of rpgmv https://katai5plate.github.io/mvblackout/
+blank project of rpgmv
 
+# Usage
+1. Access this page:
+https://katai5plate.github.io/mvblackout/
+
+2. Open the Console on DevTools.
+
+3. Paste this code:
 ```js
 var __draw = () => {}; // Coding the drawing process here
 
@@ -16,6 +23,8 @@ Game_Screen.prototype.update = function () {
   __draw(ctx);
 }
 ```
+
+4. Play. example:
 ```js
 __draw = ctx => {
   ctx.beginPath();
