@@ -33,3 +33,12 @@ __draw = ctx => {
   ctx.stroke();
 }
 ```
+```js
+console.log({__reference});
+```
+
+# default preference
+## context
+- textBaseline: top
+- strokeStyle: white
+- fillStyle: white
