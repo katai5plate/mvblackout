@@ -16,3 +16,11 @@ Game_Screen.prototype.update = function () {
   __draw(ctx);
 }
 ```
+```js
+__draw = ctx => {
+  ctx.beginPath();
+  ctx.moveTo(10, 10);
+  ctx.lineTo(90, 90);
+  ctx.stroke();
+}
+```
