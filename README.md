@@ -10,11 +10,11 @@ https://katai5plate.github.io/mvblackout/
 3. Paste this code:
 ```js
 var __draw = () => {}; // Coding the drawing process here
-var __debug = ctx => "hi"; // Coding the process to send log when pressing control/alt key here (for debugging)
+var __debug = ctx => ["hi"]; // Coding the process to send log when pressing control/alt key here (for debugging)
 
 let __mm = TouchInput._onMouseMove; TouchInput._onMouseMove = function(event) {
-  __mm.apply(this, arguments), this.mouseX = Graphics.pageToCanvasX(event.pageX), this.mouseY = Graphics.pageToCanvasY(event.pageY);
-}; const [__mx, __my, __sw, __sh] = [TouchInput.mouseX, TouchInput.mouseY, SceneManager._screenWidth, SceneManager._screenHeight];
+  __mm.apply(this, arguments), this._onMove(Graphics.pageToCanvasX(event.pageX), Graphics.pageToCanvasY(event.pageY));
+}; const [__mx, __my, __sw, __sh] = [TouchInput.x, TouchInput.y, SceneManager._screenWidth, SceneManager._screenHeight];
 let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototype.update = function () {
   __u.apply(this); const ly = 'mvblackout', sm = SceneManager; if (!sm._scene[ly]) {
     sm._scene[ly] = new Sprite(), sm._scene[ly].bitmap = new Bitmap(__sw, __sh);
@@ -23,7 +23,7 @@ let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototyp
   __reference || (()=>{__reference = ctx})();
   bitmap.clear(); ctx.textBaseline = 'top', ctx.strokeStyle = 'white', ctx.fillStyle = 'white';
   __draw(ctx);
-  Input.isPressed('control') && console.log(__debug(ctx));
+  Input.isPressed('control') && console.log(__debug(...ctx));
 }
 $gameSystem._menuEnabled = false;
 ```
@@ -36,6 +36,7 @@ __draw = ctx => {
   ctx.lineTo(90, 90);
   ctx.stroke();
 }
+__debug = () => [__mx, __my];
 ```
 ```js
 console.log({__reference});
