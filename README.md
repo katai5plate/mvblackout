@@ -20,9 +20,7 @@ let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototyp
   __reference || (()=>{__reference = ctx})();
   bitmap.clear(); ctx.textBaseline = 'top', ctx.strokeStyle = 'white', ctx.fillStyle = 'white';
   __draw(ctx), Input.isPressed('control') && console.log(...__debug(ctx));
-}
-$gameSystem._menuEnabled = false;
-Scene_Map.prototype.processMapTouch = () => {};
+}, $gameSystem._menuEnabled = false, Scene_Map.prototype.processMapTouch = () => {},
 document.body.style.backgroundColor = "gray";
 ```
 
