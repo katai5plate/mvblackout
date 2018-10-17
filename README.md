@@ -1,14 +1,14 @@
 # mvblackout
 blank project of rpgmv https://katai5plate.github.io/mvblackout/
 
-```
-var [width, height] = [SceneManager._screenWidth, SceneManager._screenHeight]
+```js
+const [width, height] = [SceneManager._screenWidth, SceneManager._screenHeight]
 
 var draw = () => {};
 
-var __u = Game_Screen.prototype.update, __reference = null;
+let __u = Game_Screen.prototype.update, __reference = null;
 Game_Screen.prototype.update = function () {
-  var drawId = "test";
+  const drawId = "test";
   __u.apply(this);
   if (!SceneManager._scene[drawId]) {
     SceneManager._scene[drawId] = new Sprite();
