@@ -14,7 +14,7 @@ var __draw = () => {}; // Coding the drawing process here
 const [__sw, __sh] = [SceneManager._screenWidth, SceneManager._screenHeight]
 let __u = Game_Screen.prototype.update, __reference = null;
 Game_Screen.prototype.update = function () {
-  __u.apply(this); const ly = 'test', sm = SceneManager; if (!sm._scene[ly]) {
+  __u.apply(this); const ly = 'mvblackout', sm = SceneManager; if (!sm._scene[ly]) {
     sm._scene[ly] = new Sprite(), sm._scene[ly].bitmap = new Bitmap(__sw, __sh);
     sm._scene.addChild(sm._scene[ly]);
   } const { bitmap } = sm._scene[ly], { context } = bitmap, ctx = context;
