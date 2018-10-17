@@ -22,6 +22,7 @@ Game_Screen.prototype.update = function () {
   bitmap.clear(); ctx.textBaseline = 'top', ctx.strokeStyle = 'white', ctx.fillStyle = 'white';
   __draw(ctx);
 }
+$gameSystem._menuEnabled = false;
 ```
 
 4. Play. example:
@@ -38,6 +39,8 @@ console.log({__reference});
 ```
 
 # default preference
+## game
+- menuEnabled: false
 ## context
 - textBaseline: top
 - strokeStyle: white
