@@ -14,10 +14,9 @@ var __debug = ctx => ["hi"]; // Coding the process to send log when pressing con
 
 const [__sw, __sh] = [SceneManager._screenWidth, SceneManager._screenHeight];
 let __u = Game_Screen.prototype.update, __reference = null; Game_Screen.prototype.update = function () {
-  __u.apply(this); const ly = 'mvblackout', sm = SceneManager; if (!sm._scene[ly]) {
-    sm._scene[ly] = new Sprite(), sm._scene[ly].bitmap = new Bitmap(__sw, __sh);
-    sm._scene.addChild(sm._scene[ly]);
-  } const { bitmap } = sm._scene[ly], { context } = bitmap, ctx = context;
+  const ly = 'mvblackout', sm = SceneManager; __u.apply(this);
+  sm._scene[ly] || sm._scene.addChild(sm._scene[ly] = new Sprite(new Bitmap(__sw, __sh)));
+  const { bitmap } = sm._scene[ly], { context } = bitmap, ctx = context;
   __reference || (()=>{__reference = ctx})();
   bitmap.clear(); ctx.textBaseline = 'top', ctx.strokeStyle = 'white', ctx.fillStyle = 'white';
   __draw(ctx), Input.isPressed('control') && console.log(...__debug(ctx));
